@@ -1,6 +1,7 @@
 use std::env;
 use std::fs;
 use std::path::Iter;
+use std::collections::HashMap;
 
 pub fn solve_day_1_2() {
     // --snip--
@@ -18,5 +19,20 @@ pub fn solve_day_1_2() {
             )
         }).unzip();
 
-    l_list.sort();
+    // let mut similarity = 0;
+    let mut r_count_map : HashMap<i32, i32> = r_list.iter()
+        .fold(HashMap::new(), |mut acc, x| {
+            *acc.entry(*x).or_insert(0) += 1;
+            acc
+        });
+
+    let similarity = l_list.iter().fold(0, |mut acc, x| {
+        acc += x * *r_count_map.entry(*x).or_insert(0);
+        acc
+    });
+
+    println!("{similarity}");
+
+
+
 }
