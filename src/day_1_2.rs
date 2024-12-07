@@ -33,6 +33,4 @@ pub fn solve_day_1_2() {
 
     println!("{similarity}");
 
-
-
 }
