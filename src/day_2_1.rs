@@ -3,7 +3,6 @@ use std::fs;
 pub fn solve_day_2_1() {
     let file_path = "/home/clement/RustroverProjects/advent_of_code/src/inputs/input_2.txt";
     println!("In file {file_path}");
-
     let contents = fs::read_to_string(file_path)
         .expect("Something went wrong reading the file")
         .split("\n")
