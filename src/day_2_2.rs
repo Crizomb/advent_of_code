@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use std::fs;
 
 pub fn is_safe(level : &Vec<i32>, skip_i : usize) -> bool
